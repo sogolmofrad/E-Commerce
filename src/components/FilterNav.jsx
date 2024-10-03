@@ -32,7 +32,7 @@ function FilterNav() {
         </button>
         {categories.map((category) => (
           <button
-            className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900"
+            className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900 hover:font-semibold"
             key={category}
           >
             {camelCase(category)}
