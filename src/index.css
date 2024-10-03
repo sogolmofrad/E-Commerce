@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menuLink:hover {
+  background: transparent !important;
+}
+
+button,
+a {
+  transition: all 0.5s !important;
+}
