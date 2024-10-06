@@ -1,7 +1,10 @@
-function CounterButton({ itemsNumber, onSetItemsNumber, onShowCountButton }) {
+import { useState } from "react";
+
+function CounterButton({ onShowCountButton }) {
+  const [itemsNumber, setItemsNumber] = useState(1);
   function handleIncrease() {
     console.log(itemsNumber);
-    onSetItemsNumber((curr) => curr + 1);
+    setItemsNumber((curr) => curr + 1);
   }
 
   function handleDecrease() {
@@ -9,7 +12,7 @@ function CounterButton({ itemsNumber, onSetItemsNumber, onShowCountButton }) {
     if (itemsNumber < 2) {
       onShowCountButton(false);
     } else {
-      onSetItemsNumber((curr) => curr - 1);
+      setItemsNumber((curr) => curr - 1);
     }
   }
   return (

@@ -3,8 +3,6 @@ import CounterButton from "./CounterButton";
 
 function SingleItem({ src, title, price }) {
   const [showCountButton, setShowCountButton] = useState(false);
-  console.log(showCountButton);
-  const [itemsNumber, setItemsNumber] = useState(1);
 
   return (
     <div className=" card bg-base-100 h-[29rem] shadow-xl rounded-none">
@@ -24,11 +22,7 @@ function SingleItem({ src, title, price }) {
             </button>
           )}
           {showCountButton && (
-            <CounterButton
-              itemsNumber={itemsNumber}
-              onSetItemsNumber={setItemsNumber}
-              onShowCountButton={setShowCountButton}
-            />
+            <CounterButton onShowCountButton={setShowCountButton} />
           )}
         </div>
       </div>
