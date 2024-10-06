@@ -12,34 +12,44 @@ const AddToCartButton = ({ product }) => {
   // update the cart in local storage
   const updateLocalStorage = (updatedCart) => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setCart(updatedCart);
+    setCart(updatedCart); // Update state with the new cart
   };
 
-  // add item to cart or update quantity
+  // dd item to cart or update quantity
   const addToCart = () => {
+    const savedCart = localStorage.getItem("cart");
+    const currentCart = savedCart ? JSON.parse(savedCart) : {};
+
     const updatedCart = {
-      ...cart,
+      ...currentCart,
       [product.id]: {
         ...product,
-        quantity: (cart[product.id]?.quantity || 0) + 1,
+        quantity: (currentCart[product.id]?.quantity || 0) + 1, // increment quantity if product exists
       },
     };
+
     updateLocalStorage(updatedCart);
   };
 
-  // remove item from cart or reduce quantity
+  
   const removeFromCart = () => {
+    const savedCart = localStorage.getItem("cart");
+    const currentCart = savedCart ? JSON.parse(savedCart) : {};
+
     if (currentQuantity > 0) {
       const updatedCart = {
-        ...cart,
+        ...currentCart,
         [product.id]: {
           ...product,
           quantity: currentQuantity - 1,
         },
       };
+
+      
       if (updatedCart[product.id].quantity === 0) {
-        delete updatedCart[product.id]; // delete product when at 0
+        delete updatedCart[product.id];
       }
+
       updateLocalStorage(updatedCart);
     }
   };
@@ -50,10 +60,14 @@ const AddToCartButton = ({ product }) => {
         <CounterButton
           itemsNumber={currentQuantity}
           onSetItemsNumber={(value) => {
-            if (value > currentQuantity) addToCart();
-            else removeFromCart();
+            if (value > currentQuantity) {
+              addToCart(); 
+            } else if (value === 0) {
+              removeFromCart(); 
+            } else {
+              removeFromCart(); 
+            }
           }}
-          onShowCountButton={() => {}}
         />
       ) : (
         <button onClick={addToCart} className="btn bg-cyan-600 text-white">
