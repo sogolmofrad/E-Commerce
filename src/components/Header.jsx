@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ itemsNumber }) {
   return (
     <header className="py-6 px-10   flex justify-between text-slate-800 items-center shadow-sm">
       <Link to="/" className="logo font-bold">
@@ -21,7 +21,7 @@ function Header() {
                 alt="cart icon"
               />
               <span className="absolute top-0 right-0 py-[0.5px] px-[4px] border-2 border-slate-800 rounded-full">
-                0
+                {itemsNumber}
               </span>
             </Link>
           </li>

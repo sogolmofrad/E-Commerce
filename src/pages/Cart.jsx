@@ -1,24 +1,26 @@
-import React from 'react';
-import CartDesktop from '../components/CartDesktop';
-import CartMobile from '../components/CartMobile';
+import CartDesktop from "../components/CartDesktop";
+import CartMobile from "../components/CartMobile";
 
 const Cart = ({ cartItems, onRemove, onDecrease, onIncrease }) => {
   // Function to calculate the total cost of the cart
-  const totalPrice = cartItems.reduce((acc, item) => acc + (item.price || 0), 0);
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + (item.price || 0),
+    0
+  );
 
-// Logic for Reset the cart
-  const handleReset = () => {
-  };
+  // Logic for Reset the cart
+  const handleReset = () => {};
 
   // Logic for Checkout the cart
-  const handleCheckout = () => {
-  };
+  const handleCheckout = () => {};
 
   return (
     <div className="bg-white min-h-screen">
       <main className="container mx-auto bg-white">
         <div className="overflow-x-auto">
-          <h1 className="text-2xl font-semibold uppercase mt-10 text-center">Shopping Cart</h1>
+          <h1 className="text-2xl font-semibold uppercase mt-10 text-center">
+            Shopping Cart
+          </h1>
 
           {cartItems.length === 0 ? (
             <div>
