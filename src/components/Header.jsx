@@ -17,7 +17,7 @@ function Header({ itemsNumber }) {
             <Link to="/cart" className="menuLink relative">
               <img
                 className="w-[28px]"
-                src="icons/icons8-cart-50.png"
+                src="/icons/icons8-cart-50.png"
                 alt="cart icon"
               />
               <span className="absolute top-0 right-0 py-[0.5px] px-[4px] border-2 border-slate-800 rounded-full">
