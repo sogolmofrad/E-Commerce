@@ -55,11 +55,10 @@ const CartDesktop = ({
 
         {/* Buttons */}
         <tr>
-          <td></td>
-          <td colSpan="2"></td>
+          <td colSpan="3"></td>
           <td className="pl-24 py-4 text-left">
             <button
-              className="text-white px-12 py-2 rounded-sm bg-rose-600 hover:bg-red-600 hover:text-white"
+              className="text-white text-sm text-center font-medium px-10 py-2 rounded-sm bg-rose-600 hover:bg-rose-700 w-32 h-10"
               onClick={onReset}
             >
               Reset
@@ -67,7 +66,7 @@ const CartDesktop = ({
           </td>
           <td className="pl-24 py-4">
             <button
-              className="bg-cyan-600 text-white px-8 py-2 rounded-sm hover:bg-cyan-700"
+              className="text-white text-sm text-center font-medium bg-cyan-600 px-8 py-2 rounded-sm hover:bg-cyan-700 w-32 h-10"
               onClick={onCheckout}
             >
               Checkout
