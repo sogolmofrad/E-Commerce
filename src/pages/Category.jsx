@@ -1,16 +1,15 @@
-// import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import FilterNav from "../components/FilterNav";
 import Header from "../components/Header";
-import Items from "../components/Items";
 
-function Home({ items }) {
+function Category() {
   return (
     <>
       <Header />
       <FilterNav />
-      <Items items={items} />
+      <Outlet />
     </>
   );
 }
 
-export default Home;
+export default Category;

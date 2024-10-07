@@ -1,9 +1,13 @@
 import SingleItem from "./SingleItem";
 
-function Items({ items }) {
+function MensClothings({ items }) {
+  const mensClothings = items.filter(
+    (item) => item.category === "men's clothing"
+  );
+
   return (
     <div className="grid md:grid-cols-2 xl:grid-cols-4 my-24 px-24 gap-12">
-      {items.map((item) => (
+      {mensClothings.map((item) => (
         <SingleItem
           key={item.id}
           product={item} // Passing the whole product
@@ -16,4 +20,4 @@ function Items({ items }) {
   );
 }
 
-export default Items;
+export default MensClothings;
