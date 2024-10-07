@@ -1,4 +1,4 @@
-import React from "react";
+
 const CartItemDesktop = ({ item, onRemove, onDecrease, onIncrease }) => {
   return (
     <tr className="border-t border-slate-200">
@@ -58,3 +58,5 @@ const CartItemDesktop = ({ item, onRemove, onDecrease, onIncrease }) => {
 };
 
 export default CartItemDesktop;
+
+
