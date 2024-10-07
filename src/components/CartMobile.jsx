@@ -43,16 +43,16 @@ const CartMobile = ({
 
           {/* Counter */}
           <div className="flex justify-center items-center mt-10">
-            <div className="btn rounded-none bg-slate-200 w-[100px] h-[35px] flex justify-between">
-              <button
-                className="px-3 text-cyan-600 font-semibold"
+          <div className="flex items-center bg-slate-200 rounded-sm w-24 h-8">
+          <button
+            className="px-3 py-1 text-cyan-600 font-semibold focus:outline-none"
                 onClick={() => onDecrease(index)}
               >
                 -
               </button>
-              <span className="mx-2">{item.quantity}</span>
+              <span className="mx-3 font-medium text-center" style={{ minWidth: "8px" }}>{item.quantity}</span>
               <button
-                className="px-3 text-cyan-600 font-semibold"
+                className="px-3 py-1 text-cyan-600 font-semibold focus:outline-none"
                 onClick={() => onIncrease(index)}
               >
                 +
@@ -69,6 +69,7 @@ const CartMobile = ({
             <span className="font-bold text-xl">TOTAL</span>
             <span className="font-bold text-xl">{totalPrice} €</span>
           </div>
+          <div>
           <button
             className="w-full bg-rose-600 text-white px-8 py-2 rounded-sm hover:bg-red-600"
             onClick={onReset}
@@ -76,11 +77,12 @@ const CartMobile = ({
             Reset
           </button>
           <button
-            className="w-full bg-cyan-600 text-white px-8 py-2 rounded-sm hover:bg-cyan-700"
+            className="w-full bg-cyan-600 text-white px-8 py-2 rounded-sm hover:bg-cyan-700 mt-2"
             onClick={onCheckout}
           >
             Checkout
           </button>
+          </div>
         </div>
       </div>
     </div>
@@ -88,3 +90,4 @@ const CartMobile = ({
 };
 
 export default CartMobile;
+
