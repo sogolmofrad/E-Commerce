@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function camelCase(str) {
   const strArr = str.split("");
@@ -9,35 +9,40 @@ function camelCase(str) {
 }
 
 function FilterNav() {
-  const [categories, setCategories] = useState([]);
-  useEffect(function () {
-    async function fetchCategories() {
-      try {
-        const res = await fetch(`https://fakestoreapi.com/products/categories`);
-        const data = await res.json();
-        setCategories(data);
-      } catch (error) {
-        throw new Error(error.message);
-      }
-    }
-    fetchCategories();
-  }, []);
-
   return (
     <div className="text-center text-slate-800 mt-8">
       <h1 className="uppercase font-semibold">our offers</h1>
-      <div className="flex justify-between w-[35%] mx-auto mt-8">
-        <button className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900">
+      <div className="flex justify-between w-[90%] md:p-x-[1rem] md:w-[50%] xl:w-[35%] mx-auto mt-8">
+        <Link
+          to="/"
+          className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900 hover:font-semibold"
+        >
           All
-        </button>
-        {categories.map((category) => (
-          <button
-            className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900 hover:font-semibold"
-            key={category}
-          >
-            {camelCase(category)}
-          </button>
-        ))}
+        </Link>
+        <Link
+          to="/category/electronics"
+          className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900 hover:font-semibold"
+        >
+          Electronics
+        </Link>
+        <Link
+          to="/category/jewelery"
+          className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900 hover:font-semibold"
+        >
+          Jewelery
+        </Link>
+        <Link
+          to="/category/mensClothing"
+          className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900 hover:font-semibold"
+        >
+          Men&apos;s Clothing
+        </Link>
+        <Link
+          to="/category/womensClothing"
+          className="hover:border-b-2 hover:text-cyan-900 hover:border-cyan-900 hover:font-semibold"
+        >
+          Women&apos;s Clothing
+        </Link>
       </div>
     </div>
   );
